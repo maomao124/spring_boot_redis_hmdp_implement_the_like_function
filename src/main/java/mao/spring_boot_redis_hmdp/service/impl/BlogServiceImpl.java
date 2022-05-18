@@ -1,7 +1,9 @@
 package mao.spring_boot_redis_hmdp.service.impl;
 
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.BooleanUtil;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -20,8 +22,11 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 
 @Service("blogService")
@@ -126,5 +131,32 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
         }
 
         return Result.ok();
+    }
+
+    @Override
+    public Result queryBlogLikes(String id)
+    {
+        //获得key
+        String redisKey = RedisConstants.BLOG_LIKED_KEY + id;
+        //查询前5名的点赞的用户(从排序集中获取start和end之间的元素)
+        Set<String> range = stringRedisTemplate.opsForZSet().range(redisKey, 0, 4);
+        //判断
+        if (range == null)
+        {
+            //返回空集合
+            return Result.ok(Collections.emptyList());
+        }
+        //非空
+        //解析出用户的id
+        List<Long> ids = range.stream().map(Long::valueOf).collect(Collectors.toList());
+        //拼接
+        String join = StrUtil.join(",", ids);
+        //查询数据库
+        List<User> users = userService.query().in("id", ids).last("order by filed(id, " + join + ")").list();
+        //转换成dto
+        List<UserDTO> dtoList = users.stream().map(user -> BeanUtil.copyProperties(user, UserDTO.class)).
+                collect(Collectors.toList());
+        //返回数据
+        return Result.ok(dtoList);
     }
 }
