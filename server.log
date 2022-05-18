@@ -1,0 +1,29 @@
+2022-05-18 22:32:07.628  INFO 16328 --- [restartedMain] sHmdpImplementTheLikeFunctionApplication : Starting SpringBootRedisHmdpImplementTheLikeFunctionApplication using Java 16.0.2 on mao with PID 16328 (H:\程序\大三下期\spring_boot_redis_hmdp达人探店之实现点赞功能\target\classes started by mao in H:\程序\大三下期\spring_boot_redis_hmdp达人探店之实现点赞功能)
+2022-05-18 22:32:07.629 DEBUG 16328 --- [restartedMain] sHmdpImplementTheLikeFunctionApplication : Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-05-18 22:32:07.629  INFO 16328 --- [restartedMain] sHmdpImplementTheLikeFunctionApplication : The following 1 profile is active: "dev"
+2022-05-18 22:32:07.675  INFO 16328 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-18 22:32:07.675  INFO 16328 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-18 22:32:08.604  INFO 16328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-18 22:32:08.606  INFO 16328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-18 22:32:08.631  INFO 16328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2022-05-18 22:32:09.151  INFO 16328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-18 22:32:09.160  INFO 16328 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-18 22:32:09.160  INFO 16328 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-18 22:32:09.232  INFO 16328 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-18 22:32:09.233  INFO 16328 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1557 ms
+2022-05-18 22:32:09.486  INFO 16328 --- [restartedMain] org.redisson.Version                     : Redisson 3.17.0
+2022-05-18 22:32:09.767  INFO 16328 --- [redisson-netty-2-17] o.r.c.pool.MasterPubSubConnectionPool    : 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2022-05-18 22:32:09.776  INFO 16328 --- [redisson-netty-2-19] o.r.c.pool.MasterConnectionPool          : 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2022-05-18 22:32:09.913  INFO 16328 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-05-18 22:32:10.023  INFO 16328 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-05-18 22:32:11.312  INFO 16328 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-18 22:32:11.317  INFO 16328 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-05-18 22:32:11.413  INFO 16328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-18 22:32:11.415  INFO 16328 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2022-05-18 22:32:11.446  INFO 16328 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#41300c8:0/SimpleConnection@58566a1d [delegate=amqp://admin@127.0.0.1:5672/, localPort= 61920]
+2022-05-18 22:32:11.450  INFO 16328 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (hmdp_exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-05-18 22:32:11.450  INFO 16328 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (hmdp_queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-05-18 22:32:11.506  INFO 16328 --- [restartedMain] sHmdpImplementTheLikeFunctionApplication : Started SpringBootRedisHmdpImplementTheLikeFunctionApplication in 4.264 seconds (JVM running for 5.235)
+2022-05-18 22:32:11.706  INFO 16328 --- [RMI TCP Connection(3)-172.28.144.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-18 22:32:11.707  INFO 16328 --- [RMI TCP Connection(3)-172.28.144.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-18 22:32:11.708  INFO 16328 --- [RMI TCP Connection(3)-172.28.144.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
